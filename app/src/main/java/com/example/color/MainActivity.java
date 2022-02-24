@@ -24,7 +24,7 @@ public class MainActivity extends AppCompatActivity {
         // add hairstyles to spinner
         ArrayAdapter<String> hairstyleAdapter = new ArrayAdapter<String>(this,
                 android.R.layout.simple_spinner_dropdown_item, hairstyles);
-        Spinner spinner = findViewById(R.id.hairstyleSpinner);
+        Spinner spinner = findViewById(R.id.face);
         spinner.setAdapter(hairstyleAdapter);
 
         com.example.color.ColorView face = findViewById(R.id.face);
@@ -33,12 +33,6 @@ public class MainActivity extends AppCompatActivity {
 
         spinner.setOnItemSelectedListener(facemaker);
 
-        RadioGroup radioGroup = findViewById(R.id.radioGroup);
-        radioGroup.setOnCheckedChangeListener(facemaker);
-
-        // set on click listener to random face button
-        Button randomFaceButton = findViewById(R.id.randomFaceButton);
-        randomFaceButton.setOnClickListener(facemaker);
 
         // set on seek bar change listener to seek bars
         SeekBar redSeekBar = findViewById(R.id.redSeekBar);

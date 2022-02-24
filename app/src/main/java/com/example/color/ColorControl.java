@@ -12,7 +12,7 @@ import android.view.View;
  */
 public class ColorControl implements AdapterView.OnItemSelectedListener, RadioGroup.OnCheckedChangeListener, View.OnClickListener, SeekBar.OnSeekBarChangeListener {
 
-    private com.example.color.Color face;
+    private com.example.color.ColorView face;
 
     public int red;
     public int green;
@@ -50,7 +50,7 @@ public class ColorControl implements AdapterView.OnItemSelectedListener, RadioGr
     @Override
     public void onCheckedChanged(RadioGroup radioGroup, int i) {
         color = Color.rgb(red, green, blue);
-        if (i == R.id.hairButton) {
+        /*if (i == R.id.hairButton) {
             // rgb corresponds to hair color
             face.hairPaint.setColor(color);
         }
@@ -62,6 +62,8 @@ public class ColorControl implements AdapterView.OnItemSelectedListener, RadioGr
             // rgb corresponds to skin color
             face.facePaint.setColor(color);
         }
+        */
+
         face.invalidate();
     }
 

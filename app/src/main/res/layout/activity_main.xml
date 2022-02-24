@@ -12,24 +12,39 @@
         android:gravity="center_horizontal"
         android:orientation="vertical">
 
-        <com.example.facemaker.Face
-            android:id="@+id/face"
+        <androidx.constraintlayout.widget.ConstraintLayout
             android:layout_width="match_parent"
-            android:layout_height="wrap_content"
-            android:layout_weight="2" />
+            android:layout_height="match_parent"
+            android:layout_weight="2">
 
-        <TextView
-            android:id="@+id/spinnerText"
-            android:layout_width="wrap_content"
-            android:layout_height="wrap_content"
-            android:text="Select hairstyle"
-            android:textSize="20sp" />
+            <com.example.color.ColorView
+                android:id="@+id/face"
+                android:layout_width="355dp"
+                android:layout_height="530dp"
+                android:layout_marginStart="32dp"
+                android:layout_marginLeft="32dp"
+                android:layout_marginTop="8dp"
+                android:layout_marginEnd="32dp"
+                android:layout_marginRight="32dp"
+                android:layout_marginBottom="75dp"
+                android:layout_weight="2"
+                app:layout_constraintBottom_toBottomOf="parent"
+                app:layout_constraintEnd_toEndOf="parent"
+                app:layout_constraintStart_toStartOf="parent"
+                app:layout_constraintTop_toBottomOf="@+id/spinnerText"
+                app:layout_constraintVertical_bias="1.0" />
 
-        <Spinner
-            android:id="@+id/hairstyleSpinner"
-            android:layout_width="wrap_content"
-            android:layout_height="wrap_content"
-            android:spinnerMode="dropdown" />
+            <TextView
+                android:id="@+id/spinnerText"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:paddingTop="10sp"
+                android:paddingBottom="5sp"
+                android:text="Change Color"
+                android:textSize="20sp"
+                tools:layout_editor_absoluteX="145dp"
+                tools:layout_editor_absoluteY="628dp" />
+        </androidx.constraintlayout.widget.ConstraintLayout>
 
         <LinearLayout
             android:layout_width="match_parent"
@@ -37,7 +52,10 @@
             android:layout_gravity="center_horizontal"
             android:layout_marginLeft="5sp"
             android:layout_marginRight="5sp"
-            android:orientation="horizontal">
+            android:layout_marginBottom="5sp"
+            android:orientation="horizontal"
+            android:paddingTop="5sp"
+            android:paddingBottom="10sp">
 
             <LinearLayout
                 android:layout_width="wrap_content"
@@ -158,45 +176,6 @@
             </LinearLayout>
 
         </LinearLayout>
-
-        <RadioGroup
-            android:id="@+id/radioGroup"
-            android:layout_width="match_parent"
-            android:layout_height="wrap_content"
-            android:layout_marginLeft="5sp"
-            android:layout_marginRight="5sp"
-            android:orientation="horizontal">
-
-            <RadioButton
-                android:id="@+id/hairButton"
-                android:layout_width="match_parent"
-                android:layout_height="wrap_content"
-                android:layout_weight="1"
-                android:gravity="center_vertical"
-                android:text="Hair" />
-
-            <RadioButton
-                android:id="@+id/eyesButton"
-                android:layout_width="match_parent"
-                android:layout_height="wrap_content"
-                android:layout_weight="1"
-                android:gravity="center_vertical"
-                android:text="Eyes" />
-
-            <RadioButton
-                android:id="@+id/skinButton"
-                android:layout_width="match_parent"
-                android:layout_height="wrap_content"
-                android:layout_weight="1"
-                android:gravity="center_vertical"
-                android:text="Skin" />
-        </RadioGroup>
-
-        <Button
-            android:id="@+id/randomFaceButton"
-            android:layout_width="match_parent"
-            android:layout_height="wrap_content"
-            android:text="Random Face" />
 
     </LinearLayout>
 

@@ -12,7 +12,7 @@ import android.annotation.SuppressLint;
 import androidx.annotation.RequiresApi;
 
 /**
- * Creates a face
+ * Create objects
  * @author Tamsen Dean
  */
 public class ColorView extends SurfaceView {
