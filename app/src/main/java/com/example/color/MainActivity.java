@@ -1,10 +1,11 @@
 package com.example.color;
 
 import androidx.appcompat.app.AppCompatActivity;
+
+import android.graphics.Color;
+import android.view.View;
 import android.widget.ArrayAdapter;
 import android.os.Bundle;
-import android.widget.Button;
-import android.widget.RadioGroup;
 import android.widget.SeekBar;
 import android.widget.Spinner;
 import android.widget.TextView;
@@ -14,43 +15,45 @@ import android.widget.TextView;
  * @author Tamsen Dean
  */
 public class MainActivity extends AppCompatActivity {
-    // user may choose 3 hairstyles
-    private String[] hairstyles = {"Short", "Medium", "Long"};
+    private View dotSelect;
+    private ColorView dotObj;
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_main);
-        // add hairstyles to spinner
-        ArrayAdapter<String> hairstyleAdapter = new ArrayAdapter<String>(this,
-                android.R.layout.simple_spinner_dropdown_item, hairstyles);
-        Spinner spinner = findViewById(R.id.face);
-        spinner.setAdapter(hairstyleAdapter);
 
-        com.example.color.ColorView face = findViewById(R.id.face);
-        // make object
-        ColorControl facemaker = new ColorControl(face);
+        TextView redVal = findViewById(R.id.redNum);
+        TextView greenVal = findViewById(R.id.greenNum);
+        TextView blueVal = findViewById(R.id.blueNum);
 
-        spinner.setOnItemSelectedListener(facemaker);
+        SeekBar redSeek = findViewById(R.id.redSeekBar);
+        SeekBar greenSeek = findViewById(R.id.greenSeekBar);
+        SeekBar blueSeek = findViewById(R.id.blueSeekBar);
 
+        dotObj = findViewById(R.id.dotView);
+        ColorControl dot = new ColorControl(dotObj, redSeek, greenSeek, blueSeek, redVal, greenVal, blueVal);
+
+        dotSelect = findViewById(R.id.dotView);
+        dotSelect.setOnClickListener(dot);
 
         // set on seek bar change listener to seek bars
         SeekBar redSeekBar = findViewById(R.id.redSeekBar);
-        redSeekBar.setOnSeekBarChangeListener(facemaker);
+        redSeekBar.setOnSeekBarChangeListener(dot);
 
         SeekBar greenSeekBar = findViewById(R.id.greenSeekBar);
-        greenSeekBar.setOnSeekBarChangeListener(facemaker);
+        greenSeekBar.setOnSeekBarChangeListener(dot);
 
         SeekBar blueSeekBar = findViewById(R.id.blueSeekBar);
-        blueSeekBar.setOnSeekBarChangeListener(facemaker);
+        blueSeekBar.setOnSeekBarChangeListener(dot);
 
         // set seek bars to show progress
-        redSeekBar.setProgress(facemaker.red);
+        /*dotSelect.red
 
-        greenSeekBar.setProgress(facemaker.green);
+        greenSeekBar.setProgress(dot.green);
 
-        blueSeekBar.setProgress(facemaker.blue);
-
+        blueSeekBar.setProgress(dot.blue);
+*/
         // set text views to show progress
         TextView redNum = findViewById(R.id.redNum);
         redNum.setText("" + redSeekBar.getProgress());

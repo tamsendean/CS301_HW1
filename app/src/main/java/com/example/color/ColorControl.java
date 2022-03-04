@@ -1,77 +1,71 @@
 package com.example.color;
 
-import android.widget.AdapterView;
 import android.graphics.Color;
-import android.widget.RadioGroup;
 import android.widget.SeekBar;
 import android.view.View;
+import android.widget.TextView;
 
 /**
- * Facemaker
+ * HW 1
  * @author Tamsen Dean
  */
-public class ColorControl implements AdapterView.OnItemSelectedListener, RadioGroup.OnCheckedChangeListener, View.OnClickListener, SeekBar.OnSeekBarChangeListener {
+public class ColorControl implements View.OnClickListener, SeekBar.OnSeekBarChangeListener {
 
-    private com.example.color.ColorView face;
-
+    private ColorView dotView;
+    private ColorModel dotModel;
+    private SeekBar rSeek;
+    private SeekBar gSeek;
+    private SeekBar bSeek;
+    private TextView rSeekVal;
+    private TextView gSeekVal;
+    private TextView bSeekVal;
+    public int color;
     public int red;
     public int green;
     public int blue;
-    public int color;
 
-    public ColorControl(ColorView face) {
-        this.face = face;
-        red = (int) (Math.random() * 255);
-        green = (int) (Math.random() * 255);
-        blue = (int) (Math.random() * 255);
+    public ColorControl(ColorView newDotView, SeekBar newRSeek, SeekBar newGSeek, SeekBar newBSeek, TextView newRSeekVal, TextView newGSeekVal, TextView newBSeekVal) {
+        dotView = newDotView;
+        dotModel = newDotView.getObj();
+        rSeek = newRSeek;
+        gSeek = newGSeek;
+        bSeek = newBSeek;
+        rSeekVal = newRSeekVal;
+        gSeekVal = newGSeekVal;
+        bSeekVal = newBSeekVal;
+
+        red = (int) (rSeekVal);
     }
 
-    @Override
-    public void onItemSelected(AdapterView<?> adapterView, View view, int i, long l) {
-        String itemSelected = adapterView.getItemAtPosition(i).toString();
-        if (itemSelected.equals("Short")) {
-            face.hairStyle = 0;
-        }
-        if (itemSelected.equals("Medium")) {
-            face.hairStyle = 1;
-        }
-        if (itemSelected.equals("Long")) {
-            face.hairStyle = 2;
-        }
-        face.invalidate();
-    }
-
-    @Override
-    public void onNothingSelected(AdapterView<?> adapterView) {
-        face.hairStyle = (int) (Math.random() * 3);
-        face.invalidate();
-    }
-
+/*
     @Override
     public void onCheckedChanged(RadioGroup radioGroup, int i) {
         color = Color.rgb(red, green, blue);
-        /*if (i == R.id.hairButton) {
+        if (i == R.id.dot1button) {
             // rgb corresponds to hair color
-            face.hairPaint.setColor(color);
+            dot.dot1Paint.setColor(color);
         }
-        else if (i == R.id.eyesButton) {
+        /*else if (i == R.id.eyesButton) {
             // rgb corresponds to eye color
-            face.eyePaint.setColor(color);
+            dot.eyePaint.setColor(color);
         }
         else if (i == R.id.skinButton) {
             // rgb corresponds to skin color
-            face.facePaint.setColor(color);
+            dot.dotPaint.setColor(color);
         }
-        */
 
-        face.invalidate();
+
+        dot.invalidate();
     }
-
+*/
     @Override
     public void onClick(View view) {
-        // randomize hair, eyes, and skin
-        face.randomize();
-        face.invalidate();
+        color = Color.rgb(red, green, blue);
+        switch (view.getId()) {
+            case R.id.dot1button:
+                dotView.dot1Paint.setColor(color);
+                break;
+        }
     }
 
     @Override
@@ -80,18 +74,18 @@ public class ColorControl implements AdapterView.OnItemSelectedListener, RadioGr
         switch (seekBar.getId()) {
             case R.id.redSeekBar:
                 // colored progress
-                red = progress;
+                dotModel.dotR = progress;
                 break;
 
             case R.id.greenSeekBar:
-                green = progress;
+                dotModel.dotG = progress;
                 break;
 
             case R.id.blueSeekBar:
-                blue = progress;
+                dotModel.dotB = progress;
                 break;
         }
-        face.invalidate();
+        dotView.invalidate();
     }
 
     @Override

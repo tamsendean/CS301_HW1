@@ -1,2 +1,2 @@
 include ':app'
-rootProject.name = "FaceMaker_Dean"
+rootProject.name = "CS301_HW1"
