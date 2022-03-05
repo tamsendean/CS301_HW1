@@ -20,21 +20,16 @@ public class ColorControl implements View.OnClickListener, SeekBar.OnSeekBarChan
     private TextView gSeekVal;
     private TextView bSeekVal;
     public int color;
-    public int red;
-    public int green;
-    public int blue;
 
-    public ColorControl(ColorView newDotView, SeekBar newRSeek, SeekBar newGSeek, SeekBar newBSeek, TextView newRSeekVal, TextView newGSeekVal, TextView newBSeekVal) {
-        dotView = newDotView;
-        dotModel = newDotView.getObj();
-        rSeek = newRSeek;
-        gSeek = newGSeek;
-        bSeek = newBSeek;
-        rSeekVal = newRSeekVal;
-        gSeekVal = newGSeekVal;
-        bSeekVal = newBSeekVal;
-
-        red = (int) (rSeekVal);
+    public ColorControl(ColorView dotView, SeekBar rSeek, SeekBar gSeek, SeekBar bSeek, TextView rSeekVal, TextView gSeekVal, TextView bSeekVal) {
+        this.dotView = dotView;
+        this.dotModel = this.dotView.getObj();
+        this.rSeek = rSeek;
+        this.gSeek = gSeek;
+        this.bSeek = bSeek;
+        this.rSeekVal = rSeekVal;
+        this.gSeekVal = gSeekVal;
+        this.bSeekVal = bSeekVal;
     }
 
 /*
@@ -58,9 +53,10 @@ public class ColorControl implements View.OnClickListener, SeekBar.OnSeekBarChan
         dot.invalidate();
     }
 */
+
     @Override
     public void onClick(View view) {
-        color = Color.rgb(red, green, blue);
+        color = Color.rgb(dotModel.dotR, dotModel.dotG, dotModel.dotB);
         switch (view.getId()) {
             case R.id.dot1button:
                 dotView.dot1Paint.setColor(color);

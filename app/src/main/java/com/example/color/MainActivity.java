@@ -6,6 +6,7 @@ import android.graphics.Color;
 import android.view.View;
 import android.widget.ArrayAdapter;
 import android.os.Bundle;
+import android.widget.Button;
 import android.widget.SeekBar;
 import android.widget.Spinner;
 import android.widget.TextView;
@@ -47,14 +48,13 @@ public class MainActivity extends AppCompatActivity {
         SeekBar blueSeekBar = findViewById(R.id.blueSeekBar);
         blueSeekBar.setOnSeekBarChangeListener(dot);
 
-        // set seek bars to show progress
-        /*dotSelect.red
-
-        greenSeekBar.setProgress(dot.green);
-
-        blueSeekBar.setProgress(dot.blue);
-*/
-        // set text views to show progress
+        Button dot1 = (Button)findViewById(R.id.dot1button);
+        dot1.setOnClickListener(dot);
+        /*Button dot2 = (Button)findViewById(R.id.dot2button);
+        dot1.setOnClickListener(dot);
+        Button dot3 = (Button)findViewById(R.id.dot3button);
+        dot1.setOnClickListener(dot);
+        */
         TextView redNum = findViewById(R.id.redNum);
         redNum.setText("" + redSeekBar.getProgress());
 
