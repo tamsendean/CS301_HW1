@@ -17,23 +17,45 @@
             android:layout_height="match_parent"
             android:layout_weight="2">
 
-            <com.example.color.ColorView
-                android:id="@+id/dotView"
-                android:layout_width="350dp"
-                android:layout_height="547dp"
-                android:layout_marginStart="32dp"
-                android:layout_marginLeft="32dp"
-                android:layout_marginTop="8dp"
-                android:layout_marginEnd="32dp"
-                android:layout_marginRight="32dp"
-                android:layout_marginBottom="100dp"
-                android:layout_weight="2"
-                app:layout_constraintBottom_toBottomOf="parent"
-                app:layout_constraintEnd_toEndOf="parent"
-                app:layout_constraintHorizontal_bias="0.123"
-                app:layout_constraintStart_toStartOf="parent"
-                app:layout_constraintTop_toBottomOf="@+id/colorChange"
-                app:layout_constraintVertical_bias="1.0" />
+            <FrameLayout
+                android:layout_width="match_parent"
+                android:layout_height="match_parent">
+
+                <com.example.color.ColorView
+                    android:id="@+id/dotView"
+                    android:layout_width="813dp"
+                    android:layout_height="1043dp"
+                    android:layout_marginStart="32dp"
+                    android:layout_marginLeft="32dp"
+                    android:layout_marginTop="8dp"
+                    android:layout_marginEnd="32dp"
+                    android:layout_marginRight="32dp"
+                    android:layout_marginBottom="100dp"
+                    android:layout_weight="2" />
+
+                <LinearLayout
+                    android:layout_width="match_parent"
+                    android:layout_height="match_parent"
+                    android:orientation="vertical">
+
+                    <Button
+                        android:id="@+id/dot1button"
+                        android:layout_width="150dp"
+                        android:layout_height="150dp"
+                        android:layout_marginStart="360dp"
+                        android:layout_marginLeft="360dp"
+                        android:layout_marginTop="450dp"
+                        android:shadowColor="#00FFFFFF"
+                        android:textColorHint="#00FFFFFF"
+                        android:visibility="visible"
+                        app:backgroundTint="#00FFFFFF"
+                        app:iconTint="#00FFFFFF"
+                        app:rippleColor="#00FFFFFF"
+                        tools:layout_conversion_absoluteHeight="155dp"
+                        tools:layout_conversion_absoluteWidth="165dp" />
+                </LinearLayout>
+
+            </FrameLayout>
 
             <TextView
                 android:id="@+id/colorChange"
@@ -57,13 +79,6 @@
                 app:layout_constraintTop_toBottomOf="@+id/dotView"
                 app:layout_constraintVertical_bias="0.0" />
 
-            <Button
-                android:id="@+id/dot1button"
-                android:layout_width="165dp"
-                android:layout_height="155dp"
-                android:visibility="invisible"
-                tools:layout_editor_absoluteX="180dp"
-                tools:layout_editor_absoluteY="775dp" />
         </androidx.constraintlayout.widget.ConstraintLayout>
 
         <LinearLayout
@@ -102,7 +117,6 @@
                         android:layout_height="match_parent"
                         android:layout_weight="1"
                         android:gravity="right"
-                        android:text="0"
                         android:textSize="15sp" />
 
                     <SeekBar
@@ -142,7 +156,6 @@
                         android:layout_height="wrap_content"
                         android:layout_weight="1"
                         android:gravity="right"
-                        android:text="0"
                         android:textSize="15sp" />
 
                     <SeekBar
@@ -181,7 +194,6 @@
                         android:layout_height="wrap_content"
                         android:layout_weight="1"
                         android:gravity="right"
-                        android:text="0"
                         android:textSize="15sp" />
 
                     <SeekBar

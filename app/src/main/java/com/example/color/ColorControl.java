@@ -32,36 +32,21 @@ public class ColorControl implements View.OnClickListener, SeekBar.OnSeekBarChan
         this.bSeekVal = bSeekVal;
     }
 
-/*
-    @Override
-    public void onCheckedChanged(RadioGroup radioGroup, int i) {
-        color = Color.rgb(red, green, blue);
-        if (i == R.id.dot1button) {
-            // rgb corresponds to hair color
-            dot.dot1Paint.setColor(color);
-        }
-        /*else if (i == R.id.eyesButton) {
-            // rgb corresponds to eye color
-            dot.eyePaint.setColor(color);
-        }
-        else if (i == R.id.skinButton) {
-            // rgb corresponds to skin color
-            dot.dotPaint.setColor(color);
-        }
-
-
-        dot.invalidate();
-    }
-*/
-
     @Override
     public void onClick(View view) {
         color = Color.rgb(dotModel.dotR, dotModel.dotG, dotModel.dotB);
         switch (view.getId()) {
             case R.id.dot1button:
-                dotView.dot1Paint.setColor(color);
+                this.dotView.dot1Paint.setColor(color);
+                this.rSeek.setProgress(dotModel.dotR);
+                this.gSeek.setProgress(dotModel.dotG);
+                this.bSeek.setProgress(dotModel.dotB);
+                this.rSeekVal.setText("" + dotModel.dotR);
+                this.gSeekVal.setText("" + dotModel.dotG);
+                this.bSeekVal.setText("" + dotModel.dotB);
                 break;
         }
+        dotView.invalidate();
     }
 
     @Override
@@ -70,15 +55,15 @@ public class ColorControl implements View.OnClickListener, SeekBar.OnSeekBarChan
         switch (seekBar.getId()) {
             case R.id.redSeekBar:
                 // colored progress
-                dotModel.dotR = progress;
+                dotModel.dotR = rSeek.getProgress();
                 break;
 
             case R.id.greenSeekBar:
-                dotModel.dotG = progress;
+                dotModel.dotG = gSeek.getProgress();
                 break;
 
             case R.id.blueSeekBar:
-                dotModel.dotB = progress;
+                dotModel.dotB = bSeek.getProgress();
                 break;
         }
         dotView.invalidate();
