@@ -13,10 +13,7 @@ import android.view.SurfaceView;
  * @author Tamsen Dean
  */
 public class ColorView extends SurfaceView {
-    public int d1Color;
-    public int eyeColor;
-    public int hairColor;
-    public int hairStyle;
+    public int dotColor;
 
     public Paint dot1Paint = new Paint();
     public Paint dot2Paint = new Paint();
@@ -32,36 +29,30 @@ public class ColorView extends SurfaceView {
         setWillNotDraw(false);
         dotObj = new ColorModel();
         this.setBackgroundColor(Color.WHITE);
-        this.dot1Paint.setColor(Color.RED);
         setColor();
     }
 
     public void setColor() {
-        d1Color = Color.rgb(dotObj.dotR, dotObj.dotG, dotObj.dotB);
-        eyeColor = Color.rgb((int) (Math.random() * 255), (int) (Math.random() * 255), (int) (Math.random() * 255));
-        hairColor = Color.rgb((int) (Math.random() * 255), (int) (Math.random() * 255), (int) (Math.random() * 255));
-        hairStyle = (int) (Math.random() * 3);
-        this.dot1Paint.setColor(d1Color);
-        this.dot2Paint.setColor(eyeColor);
-        this.dot3Paint.setColor(hairColor);
+        dotColor = Color.rgb(dotObj.dotR, dotObj.dotG, dotObj.dotB);
+        this.dot1Paint.setColor(Color.RED);
+        this.dot2Paint.setColor(Color.GREEN);
+        this.dot3Paint.setColor(Color.BLUE);
+        this.dot4Paint.setColor(Color.YELLOW);
+        this.dot5Paint.setColor(Color.MAGENTA);
+        this.dot6Paint.setColor(Color.CYAN);
     }
 
     @Override
     protected void onDraw(Canvas canvas) {
         int height = getHeight() / 2;
         int width = getWidth() / 2;
-        int length = height;
-        if (hairStyle == 0) {
-            length = length + 500;
-        } else if (hairStyle == 1) {
-            length = length + 600;
-        } else if (hairStyle == 2) {
-            length = length + 700;
-        }
-
 
         canvas.drawCircle(width, height, 200.0f, dot1Paint);
-
+        canvas.drawCircle(width+550, height+375, 200.0f, dot2Paint);
+        canvas.drawCircle(width-475, height-500, 200.0f, dot3Paint);
+        canvas.drawCircle(width+475, height-500, 200.0f, dot4Paint);
+        canvas.drawCircle(width-450, height+375, 200.0f, dot5Paint);
+        canvas.drawCircle(width, height+550, 200.0f, dot6Paint);
     }
     public ColorModel getObj(){
         return dotObj;

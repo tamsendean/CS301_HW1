@@ -53,6 +53,86 @@
                         app:rippleColor="#00FFFFFF"
                         tools:layout_conversion_absoluteHeight="155dp"
                         tools:layout_conversion_absoluteWidth="165dp" />
+
+                    <Button
+                        android:id="@+id/dot2button"
+                        android:layout_width="150dp"
+                        android:layout_height="150dp"
+                        android:layout_marginStart="635dp"
+                        android:layout_marginLeft="635dp"
+                        android:layout_marginTop="40dp"
+                        android:shadowColor="#00FFFFFF"
+                        android:textColorHint="#00FFFFFF"
+                        android:visibility="visible"
+                        app:backgroundTint="#00FFFFFF"
+                        app:iconTint="#00FFFFFF"
+                        app:rippleColor="#00FFFFFF"
+                        tools:layout_conversion_absoluteHeight="155dp"
+                        tools:layout_conversion_absoluteWidth="165dp" />
+
+                    <Button
+                        android:id="@+id/dot3button"
+                        android:layout_width="150dp"
+                        android:layout_height="150dp"
+                        android:layout_marginStart="125dp"
+                        android:layout_marginLeft="125dp"
+                        android:layout_marginTop="-585dp"
+                        android:shadowColor="#00FFFFFF"
+                        android:textColorHint="#00FFFFFF"
+                        android:visibility="visible"
+                        app:backgroundTint="#00FFFFFF"
+                        app:iconTint="#00FFFFFF"
+                        app:rippleColor="#00FFFFFF"
+                        tools:layout_conversion_absoluteHeight="155dp"
+                        tools:layout_conversion_absoluteWidth="165dp" />
+
+                    <Button
+                        android:id="@+id/dot4button"
+                        android:layout_width="150dp"
+                        android:layout_height="150dp"
+                        android:layout_marginStart="600dp"
+                        android:layout_marginLeft="600dp"
+                        android:layout_marginTop="-150dp"
+                        android:shadowColor="#00FFFFFF"
+                        android:textColorHint="#00FFFFFF"
+                        android:visibility="visible"
+                        app:backgroundTint="#00FFFFFF"
+                        app:iconTint="#00FFFFFF"
+                        app:rippleColor="#00FFFFFF"
+                        tools:layout_conversion_absoluteHeight="155dp"
+                        tools:layout_conversion_absoluteWidth="165dp" />
+
+                    <Button
+                        android:id="@+id/dot5button"
+                        android:layout_width="150dp"
+                        android:layout_height="150dp"
+                        android:layout_marginStart="140dp"
+                        android:layout_marginLeft="140dp"
+                        android:layout_marginTop="285dp"
+                        android:shadowColor="#00FFFFFF"
+                        android:textColorHint="#00FFFFFF"
+                        android:visibility="visible"
+                        app:backgroundTint="#00FFFFFF"
+                        app:iconTint="#00FFFFFF"
+                        app:rippleColor="#00FFFFFF"
+                        tools:layout_conversion_absoluteHeight="155dp"
+                        tools:layout_conversion_absoluteWidth="165dp" />
+
+                    <Button
+                        android:id="@+id/dot6button"
+                        android:layout_width="150dp"
+                        android:layout_height="150dp"
+                        android:layout_marginStart="360dp"
+                        android:layout_marginLeft="360dp"
+                        android:layout_marginTop="-60dp"
+                        android:shadowColor="#00FFFFFF"
+                        android:textColorHint="#00FFFFFF"
+                        android:visibility="visible"
+                        app:backgroundTint="#00FFFFFF"
+                        app:iconTint="#00FFFFFF"
+                        app:rippleColor="#00FFFFFF"
+                        tools:layout_conversion_absoluteHeight="155dp"
+                        tools:layout_conversion_absoluteWidth="165dp" />
                 </LinearLayout>
 
             </FrameLayout>

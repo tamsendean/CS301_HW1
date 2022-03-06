@@ -32,12 +32,62 @@ public class ColorControl implements View.OnClickListener, SeekBar.OnSeekBarChan
         this.bSeekVal = bSeekVal;
     }
 
-    @Override
+    @Override // upon clicking dot, its specific color is changed with rgb values
     public void onClick(View view) {
-        color = Color.rgb(dotModel.dotR, dotModel.dotG, dotModel.dotB);
         switch (view.getId()) {
             case R.id.dot1button:
+                color = Color.rgb(dotModel.dotR, dotModel.dotG, dotModel.dotB);
                 this.dotView.dot1Paint.setColor(color);
+                this.rSeek.setProgress(dotModel.dotR);
+                this.gSeek.setProgress(dotModel.dotG);
+                this.bSeek.setProgress(dotModel.dotB);
+                this.rSeekVal.setText("" + dotModel.dotR);
+                this.gSeekVal.setText("" + dotModel.dotG);
+                this.bSeekVal.setText("" + dotModel.dotB);
+                break;
+            case R.id.dot2button:
+                color = Color.rgb(dotModel.dotR, dotModel.dotG, dotModel.dotB);
+                this.dotView.dot2Paint.setColor(color);
+                this.rSeek.setProgress(dotModel.dotR);
+                this.gSeek.setProgress(dotModel.dotG);
+                this.bSeek.setProgress(dotModel.dotB);
+                this.rSeekVal.setText("" + dotModel.dotR);
+                this.gSeekVal.setText("" + dotModel.dotG);
+                this.bSeekVal.setText("" + dotModel.dotB);
+                break;
+            case R.id.dot3button:
+                color = Color.rgb(dotModel.dotR, dotModel.dotG, dotModel.dotB);
+                this.dotView.dot3Paint.setColor(color);
+                this.rSeek.setProgress(dotModel.dotR);
+                this.gSeek.setProgress(dotModel.dotG);
+                this.bSeek.setProgress(dotModel.dotB);
+                this.rSeekVal.setText("" + dotModel.dotR);
+                this.gSeekVal.setText("" + dotModel.dotG);
+                this.bSeekVal.setText("" + dotModel.dotB);
+                break;
+            case R.id.dot4button:
+                color = Color.rgb(dotModel.dotR, dotModel.dotG, dotModel.dotB);
+                this.dotView.dot4Paint.setColor(color);
+                this.rSeek.setProgress(dotModel.dotR);
+                this.gSeek.setProgress(dotModel.dotG);
+                this.bSeek.setProgress(dotModel.dotB);
+                this.rSeekVal.setText("" + dotModel.dotR);
+                this.gSeekVal.setText("" + dotModel.dotG);
+                this.bSeekVal.setText("" + dotModel.dotB);
+                break;
+            case R.id.dot5button:
+                color = Color.rgb(dotModel.dotR, dotModel.dotG, dotModel.dotB);
+                this.dotView.dot5Paint.setColor(color);
+                this.rSeek.setProgress(dotModel.dotR);
+                this.gSeek.setProgress(dotModel.dotG);
+                this.bSeek.setProgress(dotModel.dotB);
+                this.rSeekVal.setText("" + dotModel.dotR);
+                this.gSeekVal.setText("" + dotModel.dotG);
+                this.bSeekVal.setText("" + dotModel.dotB);
+                break;
+            case R.id.dot6button:
+                color = Color.rgb(dotModel.dotR, dotModel.dotG, dotModel.dotB);
+                this.dotView.dot6Paint.setColor(color);
                 this.rSeek.setProgress(dotModel.dotR);
                 this.gSeek.setProgress(dotModel.dotG);
                 this.bSeek.setProgress(dotModel.dotB);

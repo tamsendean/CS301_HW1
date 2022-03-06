@@ -42,7 +42,18 @@ public class MainActivity extends AppCompatActivity {
 
         Button dot1 = (Button)findViewById(R.id.dot1button);
         dot1.setOnClickListener(dot);
+        Button dot2 = (Button)findViewById(R.id.dot2button);
+        dot2.setOnClickListener(dot);
+        Button dot3 = (Button)findViewById(R.id.dot3button);
+        dot3.setOnClickListener(dot);
+        Button dot4 = (Button)findViewById(R.id.dot4button);
+        dot4.setOnClickListener(dot);
+        Button dot5 = (Button)findViewById(R.id.dot5button);
+        dot5.setOnClickListener(dot);
+        Button dot6 = (Button)findViewById(R.id.dot6button);
+        dot6.setOnClickListener(dot);
 
+        // attempt to display seek bar values, successful in color control class
         redVal.setText("" + redSeek.getProgress());
         greenVal.setText("" + greenSeek.getProgress());
         blueVal.setText("" + blueSeek.getProgress());
